@@ -80,7 +80,7 @@ namespace warp_plus_cloudflare___by_aliilapro__.FRM
             this.lblproxy.Text = "0";
             try
             {
-                HttpWebResponse response = (HttpWebResponse)((HttpWebRequest)WebRequest.Create("https://api.proxyscrape.com?request=getproxies&proxytype=http&timeout=10000&country=all&ssl=all&anonymity=all")).GetResponse();
+                HttpWebResponse response = (HttpWebResponse)((HttpWebRequest)WebRequest.Create("https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all")).GetResponse();
                 string end = new StreamReader(response.GetResponseStream()).ReadToEnd();
                 MatchCollection matchCollections = new Regex("[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}:[0-9]{1,5}").Matches(end);
                 try
